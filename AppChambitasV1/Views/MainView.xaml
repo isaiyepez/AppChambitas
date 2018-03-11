@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="AppChambitasV1.Views.MainView"
+    BindingContext="{Binding Main, Source = {StaticResource Locator}}">
+
+    <ContentPage.Content>
+        <StackLayout
+            Padding = "20,30,20,10">
+            <Label FontAttributes = "Bold"
+                   FontSize = "Large"
+                   HorizontalOptions = "Center"
+                   Text = "App Chambitas">
+                
+                </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
