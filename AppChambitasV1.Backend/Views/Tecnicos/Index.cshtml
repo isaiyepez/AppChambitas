@@ -1,0 +1,75 @@
+﻿@model IEnumerable<AppChambitasV1.Domain.Tecnico>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tecn_Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tecn_Correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tecn_Contrasenia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tecn_Domicilio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tecn_Promedio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tecn_Activo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tecn_FechaHora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tecn_ModificadoPor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tecn_Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tecn_Correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tecn_Contrasenia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tecn_Domicilio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tecn_Promedio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tecn_Activo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tecn_FechaHora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tecn_ModificadoPor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Tecn_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Tecn_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Tecn_ID })
+        </td>
+    </tr>
+}
+
+</table>

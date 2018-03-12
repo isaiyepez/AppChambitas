@@ -1,0 +1,63 @@
+﻿@model IEnumerable<AppChambitasV1.Domain.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Usua_Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usua_Correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usua_Contrasenia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usua_Activo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usua_FechaHora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usua_ModificadoPor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usua_Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usua_Correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usua_Contrasenia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usua_Activo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usua_FechaHora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usua_ModificadoPor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Usua_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Usua_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Usua_ID })
+        </td>
+    </tr>
+}
+
+</table>

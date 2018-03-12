@@ -1,0 +1,56 @@
+﻿@model AppChambitasV1.Domain.TiposServiciosDetalle
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TiposServiciosDetalle</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TiposServicios.TipoServ_Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TiposServicios.TipoServ_Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoServDeta_Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoServDeta_Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoServDeta_Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoServDeta_Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoServDeta_Precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoServDeta_Precio)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

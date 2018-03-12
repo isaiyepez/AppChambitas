@@ -1,0 +1,82 @@
+﻿@model AppChambitasV1.Domain.Tecnico
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tecnico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tecn_Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tecn_Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tecn_Correo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tecn_Correo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tecn_Contrasenia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tecn_Contrasenia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tecn_Domicilio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tecn_Domicilio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tecn_Promedio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tecn_Promedio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tecn_Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tecn_Activo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tecn_FechaHora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tecn_FechaHora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tecn_ModificadoPor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tecn_ModificadoPor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Tecn_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

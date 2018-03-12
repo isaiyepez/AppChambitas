@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AppChambitasV1.Domain.TiposServiciosDetalle>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TiposServicios.TipoServ_Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoServDeta_Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoServDeta_Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoServDeta_Precio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TiposServicios.TipoServ_Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoServDeta_Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoServDeta_Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoServDeta_Precio)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TipoServDeta_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TipoServDeta_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TipoServDeta_ID })
+        </td>
+    </tr>
+}
+
+</table>

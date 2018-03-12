@@ -1,0 +1,99 @@
+﻿@model IEnumerable<AppChambitasV1.Domain.Servicio>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tecnico.Tecn_Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario.Usua_Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serv_FechaHoraSolicitud)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serv_FechaSolicitada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serv_Latitud)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serv_Longitud)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serv_FechaHoraCumplida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serv_Evaluacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serv_Domicilio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serv_Comentarios)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serv_FechaHora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serv_ModificadoPor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tecnico.Tecn_Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario.Usua_Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serv_FechaHoraSolicitud)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serv_FechaSolicitada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serv_Latitud)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serv_Longitud)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serv_FechaHoraCumplida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serv_Evaluacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serv_Domicilio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serv_Comentarios)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serv_FechaHora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serv_ModificadoPor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Serv_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Serv_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Serv_ID })
+        </td>
+    </tr>
+}
+
+</table>

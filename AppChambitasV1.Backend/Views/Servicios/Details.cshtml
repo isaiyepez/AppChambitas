@@ -1,0 +1,114 @@
+﻿@model AppChambitasV1.Domain.Servicio
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Servicio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tecnico.Tecn_Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tecnico.Tecn_Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.Usua_Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.Usua_Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Serv_FechaHoraSolicitud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Serv_FechaHoraSolicitud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Serv_FechaSolicitada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Serv_FechaSolicitada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Serv_Latitud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Serv_Latitud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Serv_Longitud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Serv_Longitud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Serv_FechaHoraCumplida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Serv_FechaHoraCumplida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Serv_Evaluacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Serv_Evaluacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Serv_Domicilio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Serv_Domicilio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Serv_Comentarios)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Serv_Comentarios)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Serv_FechaHora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Serv_FechaHora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Serv_ModificadoPor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Serv_ModificadoPor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Serv_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
