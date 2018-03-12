@@ -30,6 +30,9 @@ namespace AppChambitasV1.Domain
         public int Tecn_Promedio { get; set; }
         [Display(Name = "Activo")]
         public bool Tecn_Activo { get; set; }
+
+        public string Tecn_Imagen { get; set; }
+
         [DataType(DataType.DateTime)]
         [Display(Name = "FechaHora")]
         public DateTime Tecn_FechaHora { get; set; }

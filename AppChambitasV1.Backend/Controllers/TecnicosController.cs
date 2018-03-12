@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
+﻿using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using AppChambitasV1.Backend.Models;
 using AppChambitasV1.Domain;
 
 namespace AppChambitasV1.Backend.Controllers
 {
+    [Authorize]
     public class TecnicosController : Controller
     {
         private DataContextLocal db = new DataContextLocal();
