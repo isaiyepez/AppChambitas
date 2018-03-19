@@ -31,6 +31,7 @@ namespace AppChambitasV1.Domain
         [Display(Name = "Activo")]
         public bool Tecn_Activo { get; set; }
 
+        [Display(Name = "Imagen")]
         public string Tecn_Imagen { get; set; }
 
         [DataType(DataType.DateTime)]

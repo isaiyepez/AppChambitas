@@ -9,7 +9,7 @@ namespace AppChambitasV1.Domain
 {
     public class DataContext : DbContext
     {
-        public DataContext() : base("ChambitasBD")
+        public DataContext() : base("DefaultConnection")
         {
         }
         public DbSet<TiposServicios> TiposServicios { get; set; }

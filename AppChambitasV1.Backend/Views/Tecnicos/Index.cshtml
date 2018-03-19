@@ -4,18 +4,18 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Técnicos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary" })
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Tecn_Nombre)
+            Nombre
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Tecn_Correo)
+            Correo
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Tecn_Contrasenia)
@@ -25,6 +25,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Tecn_Promedio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tecn_Imagen)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Tecn_Activo)
@@ -38,38 +41,45 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tecn_Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tecn_Correo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tecn_Contrasenia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tecn_Domicilio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tecn_Promedio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tecn_Activo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tecn_FechaHora)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tecn_ModificadoPor)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Tecn_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Tecn_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Tecn_ID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tecn_Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tecn_Correo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tecn_Contrasenia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tecn_Domicilio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tecn_Promedio)
+            </td>
+            <td>
+                @if (!string.IsNullOrEmpty(item.Tecn_Imagen))
+                {
+                    <img src="@Url.Content(item.Tecn_Imagen)" alt="Image" style="width:100px;height:100px;max-width: 100%; height: auto;" />
+                }               
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tecn_Activo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tecn_FechaHora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tecn_ModificadoPor)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Tecn_ID }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Tecn_ID }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Tecn_ID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
 
 </table>
