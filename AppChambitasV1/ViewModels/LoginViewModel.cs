@@ -171,7 +171,7 @@
                 return;
             }
 
-            var response = await apiService.GetToken("http://appchambitasv1api2018.azurewebsites.net", Email, Password);
+            var response = await apiService.GetToken("https://solrestchambitas2018.azurewebsites.net/v1/", Email, Password);
 
             //Si se perdió la conexión a la mitad de la operación...
             if (response == null)
