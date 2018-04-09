@@ -12,14 +12,14 @@ namespace AppChambitasV1.Domain
     {
         [Key]
         public int Usua_ID { get; set; }
-        [Required(ErrorMessage ="The field {0} is required")]
+        [Required(ErrorMessage = "The field {0} is required")]
         public string Usua_Nombre { get; set; }
-        [Required(ErrorMessage ="The field {0} is required")]
+        [Required(ErrorMessage = "The field {0} is required")]
         [MaxLength(50, ErrorMessage = "The field {0} should have {1} char lenght")]
         [DataType(DataType.EmailAddress)]
         public string Usua_Correo { get; set; }
         [DataType(DataType.Password)]
-        [Required(ErrorMessage ="The field {0} is required")]
+        [Required(ErrorMessage = "The field {0} is required")]
         public string Usua_Contrasenia { get; set; }
         [Display(Name = "Is Active?")]
         public bool Usua_Activo { get; set; }

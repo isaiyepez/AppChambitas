@@ -17,7 +17,7 @@ namespace AppChambitasV1.Domain
         [Required(ErrorMessage = "The field {0} is required")]
         public string TipoServDeta_Nombre { get; set; }
         public string TipoServDeta_Descripcion { get; set; }
-        [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode =false)]
+        [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
         public decimal TipoServDeta_Precio { get; set; }
 
         [JsonIgnore]

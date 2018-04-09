@@ -12,9 +12,9 @@ namespace AppChambitasV1.Domain
     {
         [Key]
         public int Serv_ID { get; set; }
-        [Required(ErrorMessage ="The field {0} is required")]
+        [Required(ErrorMessage = "The field {0} is required")]
         public int Usua_ID { get; set; }
-        [Required(ErrorMessage ="The field {0} is required")]
+        [Required(ErrorMessage = "The field {0} is required")]
         public int Tecn_ID { get; set; }
         [DataType(DataType.DateTime)]
         public DateTime Serv_FechaHoraSolicitud { get; set; }

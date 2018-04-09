@@ -12,7 +12,6 @@ using AppChambitasV1.Domain;
 
 namespace AppChambitasV1.Backend.Controllers
 {
-
     public class TiposServiciosController : Controller
     {
         private DataContextLocal db = new DataContextLocal();

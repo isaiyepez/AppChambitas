@@ -9,7 +9,7 @@ namespace AppChambitasV1.Domain
     {
         [Key]
         [Display(Name = "ServiciosTecnicos_ID")]
-        public int ServTecn_ID { get; set; }      
+        public int ServTecn_ID { get; set; }
 
         [JsonIgnore]
         public virtual ICollection<Tecnico> Tecnico { get; set; }
