@@ -15,5 +15,17 @@ namespace AppChambitasV1.Domain
         {
 
         }
+
+        public DbSet<Servicio> Servicios { get; set; }
+
+        public DbSet<Tecnico> Tecnicoes { get; set; }
+
+        public DbSet<Usuario> Usuarios { get; set; }
+
+        public DbSet<ServiciosTecnicos> ServiciosTecnicos { get; set; }
+
+        public DbSet<TiposServicios> TiposServicios { get; set; }
+
+        public DbSet<TiposServiciosDetalle> TiposServiciosDetalles { get; set; }
     }
 }
