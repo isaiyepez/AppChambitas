@@ -198,6 +198,7 @@
 
             //Se implementa patrón singleton
             var mainViewModel = MainViewModel.GetInstance();
+            mainViewModel.Token = response;
             mainViewModel.Categories = new CategoriesViewModel();
 
             await Application.Current.MainPage.Navigation.PushAsync(
