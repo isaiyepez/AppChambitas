@@ -14,6 +14,7 @@ using AppChambitasV1.Domain;
 
 namespace AppChambitasV1.API.Controllers
 {
+    [Authorize]
     public class TiposServiciosController : ApiController
     {
         private DataContext db = new DataContext();
