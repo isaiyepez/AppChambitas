@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using AppChambitasV1.API.Models;
 using AppChambitasV1.Domain;
 
 namespace AppChambitasV1.API.Controllers
@@ -18,9 +19,35 @@ namespace AppChambitasV1.API.Controllers
         private DataContext db = new DataContext();
 
         // GET: api/TiposServicios
-        public IQueryable<TiposServicios> GetTiposServicios()
+        public async Task<IHttpActionResult> GetTiposServicios()
         {
-            return db.TiposServicios;
+            var tiposServicios = await db.TiposServicios.ToListAsync();
+            var tiposServiciosResponse = new List<TiposServiciosResponse>();
+
+            foreach (var tipo in tiposServicios)
+            {
+                var tiposServiciosDetalleResponse = new List<TiposServiciosDetalleResponse>();
+
+                foreach (var tipoDetalle in tipo.TiposServiciosDetalles)
+                {
+                    tiposServiciosDetalleResponse.Add(new TiposServiciosDetalleResponse
+                    {
+                        TipoServ_ID = tipoDetalle.TipoServ_ID,
+                        TipoServDeta_Nombre = tipoDetalle.TipoServDeta_Nombre,
+                        TipoServDeta_Descripcion = tipoDetalle.TipoServDeta_Descripcion,
+                        TipoServDeta_Precio = tipoDetalle.TipoServDeta_Precio,
+                    });
+                }
+
+                tiposServiciosResponse.Add(new TiposServiciosResponse
+                {
+                    TipoServ_ID = tipo.TipoServ_ID,
+                    TipoServ_Nombre = tipo.TipoServ_Nombre,
+                    TipoServ_Descripcion = tipo.TipoServ_Descripcion,
+                    TiposServiciosDetalles = tiposServiciosDetalleResponse,
+                });
+            }
+            return Ok(tiposServiciosResponse);
         }
 
         // GET: api/TiposServicios/5

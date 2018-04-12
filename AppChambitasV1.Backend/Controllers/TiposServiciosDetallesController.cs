@@ -12,6 +12,7 @@ using AppChambitasV1.Domain;
 
 namespace AppChambitasV1.Backend.Controllers
 {
+    [Authorize]
     public class TiposServiciosDetallesController : Controller
     {
         private DataContextLocal db = new DataContextLocal();
@@ -50,7 +51,7 @@ namespace AppChambitasV1.Backend.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "TipoServDeta_ID,TipoServ_ID,TipoServDeta_Nombre,TipoServDeta_Descripcion,TipoServDeta_Precio")] TiposServiciosDetalle tiposServiciosDetalle)
+        public async Task<ActionResult> Create(TiposServiciosDetalle tiposServiciosDetalle)
         {
             if (ModelState.IsValid)
             {
@@ -84,7 +85,7 @@ namespace AppChambitasV1.Backend.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "TipoServDeta_ID,TipoServ_ID,TipoServDeta_Nombre,TipoServDeta_Descripcion,TipoServDeta_Precio")] TiposServiciosDetalle tiposServiciosDetalle)
+        public async Task<ActionResult> Edit(TiposServiciosDetalle tiposServiciosDetalle)
         {
             if (ModelState.IsValid)
             {
