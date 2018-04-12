@@ -7,7 +7,7 @@
     Title = "Categories">
     <ContentPage.Content>
         <StackLayout
-            BindingContext="{Binding Categories}"
+            BindingContext="{Binding TiposServicios}"
             Padding = "5">
         </StackLayout>
     </ContentPage.Content>

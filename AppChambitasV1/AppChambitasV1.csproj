@@ -67,6 +67,8 @@
       <DependentUpon>CategoriesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\CategoriesViewModel.cs" />
+    <Compile Include="Models\TiposServicios.cs" />
+    <Compile Include="Models\TiposServiciosDetalle.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLitePCLRaw.batteries_green, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">

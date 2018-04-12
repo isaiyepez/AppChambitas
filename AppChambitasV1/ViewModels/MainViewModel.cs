@@ -1,4 +1,6 @@
-﻿namespace AppChambitasV1.ViewModels
+﻿using AppChambitasV1.Models;
+
+namespace AppChambitasV1.ViewModels
 {
     public class MainViewModel
     {
@@ -14,6 +16,13 @@
         get;
         set;
     }
+
+        public TokenResponse Token
+        {
+            get;
+            set;
+
+        }
     #endregion
 
     #region Constructors
