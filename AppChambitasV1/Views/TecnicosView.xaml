@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="AppChambitasV1.Views.CategoriesView"
-    BindingContext="{Binding Main, Source= {StaticResource Locator}}"
-    Title = "Categorías">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="AppChambitasV1.Views.TecnicosView">
     <ContentPage.Content>
         <StackLayout
-            BindingContext="{Binding TiposServicios}"
+            BindingContext="{Binding Tecnicos}"
             Padding = "5">
             <ListView
-                HasUnevenRows = "true"
-                IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
-                IsPullToRefreshEnabled="true"
-                RefreshCommand = "{Binding RefreshCommand}"
-                ItemsSource = "{Binding TiposServicios}">
+                ItemsSource = "{Binding Tecnicos}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -31,23 +22,26 @@
                             </ViewCell.ContextActions>  -->
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Label 
+                                <Image
                                     Grid.Column="0" 
+                                    HeightRequest="100"
+                                    HorizontalOptions="End" 
+                                    Source="{Binding ImageFullPath}"
+                                    WidthRequest = "100">
+                                    <!--<Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectTiposServiciosCommand}"/>
+                                    </Image.GestureRecognizers>-->
+                                </Image>
+                                <Label 
+                                    Grid.Column="1" 
                                     HorizontalOptions="FillAndExpand" 
-                                    FontSize="Large" 
-                                    Text="{Binding TipoServ_Nombre}" 
+                                    FontSize="Medium" 
+                                    Text="{Binding Tecn_Nombre}" 
                                     VerticalOptions="Center">
                                 </Label>
-                                <Image 
-                                    HorizontalOptions="End" 
-                                    Source="ic_chevron_right">
-                                    <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding SelectTiposServiciosCommand}"/>
-                                    </Image.GestureRecognizers>
-                                </Image>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

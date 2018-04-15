@@ -3,10 +3,8 @@
     using System.ComponentModel;
     using System.Windows.Input;
     using AppChambitasV1.Services;
-    using AppChambitasV1.Views;
     using GalaSoft.MvvmLight.Command;
-    using Xamarin.Forms;
-
+     
     public class LoginViewModel : INotifyPropertyChanged
     {
         #region Events
@@ -16,6 +14,7 @@
         #region Services
         ApiService apiService;
         DialogService dialogService;
+        NavigationService navigationService;
         #endregion
 
         #region Attributes
@@ -122,6 +121,7 @@
         {
             apiService = new ApiService();
             dialogService = new DialogService();
+            navigationService = new NavigationService();
             //Como los botones se habilitan con un booleano, es necesario habilitarlos
             IsEnabled = true;
             IsToggled = true;
@@ -200,10 +200,8 @@
             var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.Token = response;
             mainViewModel.Categories = new CategoriesViewModel();
-
-            await Application.Current.MainPage.Navigation.PushAsync(
-                new CategoriesView());
-            
+            await navigationService.Navigate("CategoriesView");
+                                   
             Email = null;
             Password = null;
 

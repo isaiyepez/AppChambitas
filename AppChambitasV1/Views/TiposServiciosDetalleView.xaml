@@ -2,23 +2,19 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="AppChambitasV1.Views.CategoriesView"
+    x:Class="AppChambitasV1.Views.TiposServiciosDetalleView"
     BindingContext="{Binding Main, Source= {StaticResource Locator}}"
-    Title = "Categorías">
+    Title = "Listado de Servicios">
     <ContentPage.Content>
         <StackLayout
-            BindingContext="{Binding TiposServicios}"
+            BindingContext="{Binding TiposServiciosDetalle}"
             Padding = "5">
             <ListView
-                HasUnevenRows = "true"
-                IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
-                IsPullToRefreshEnabled="true"
-                RefreshCommand = "{Binding RefreshCommand}"
-                ItemsSource = "{Binding TiposServicios}">
+                ItemsSource = "{Binding TiposServiciosDetalle}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <!--<ViewCell.ContextActions>
+                           <!-- <ViewCell.ContextActions>
                                 <MenuItem 
                                     Command="{Binding EditCommand}" 
                                     Text="Edit">
@@ -38,7 +34,7 @@
                                     Grid.Column="0" 
                                     HorizontalOptions="FillAndExpand" 
                                     FontSize="Large" 
-                                    Text="{Binding TipoServ_Nombre}" 
+                                    Text="{Binding TipoServDeta_Nombre}" 
                                     VerticalOptions="Center">
                                 </Label>
                                 <Image 

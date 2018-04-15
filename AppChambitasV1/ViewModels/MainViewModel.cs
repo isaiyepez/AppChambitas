@@ -4,18 +4,18 @@ namespace AppChambitasV1.ViewModels
 {
     public class MainViewModel
     {
-    #region Properties
-    public LoginViewModel Login
-    {
-        get;
-        set;
-    }
+        #region Properties
+        public LoginViewModel Login
+        {
+            get;
+            set;
+        }
 
-    public CategoriesViewModel Categories
-    {
-        get;
-        set;
-    }
+        public CategoriesViewModel Categories
+        {
+            get;
+            set;
+        }
 
         public TokenResponse Token
         {
@@ -23,13 +23,26 @@ namespace AppChambitasV1.ViewModels
             set;
 
         }
-    #endregion
 
-    #region Constructors
+        public TiposServiciosDetalleViewModel TiposServiciosDetalle
+        {
+            get;
+            set;
+        }
+
+        public TecnicosViewModel Tecnicos
+        {
+            get;
+            set;
+        }
+
+        #endregion
+
+        #region Constructors
         public MainViewModel()
         {
-        instance = this;
-        Login= new LoginViewModel();
+            instance = this;
+            Login = new LoginViewModel();
         }
         #endregion
 
@@ -38,14 +51,14 @@ namespace AppChambitasV1.ViewModels
 
         public static MainViewModel GetInstance()
         {
-            if(instance == null)
+            if (instance == null)
             {
                 return new MainViewModel();
             }
 
             return instance;
         }
-         
+
         #endregion
     }
 }

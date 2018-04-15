@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
+using System.Windows.Input;
 using AppChambitasV1.Models;
 using AppChambitasV1.Services;
+using GalaSoft.MvvmLight.Command;
 
 namespace AppChambitasV1.ViewModels
 {
@@ -56,7 +59,7 @@ namespace AppChambitasV1.ViewModels
         async void LoadCategories()
         {
             var connection = await apiService.CheckConnection();
-            if(!connection.IsSuccess)
+            if (!connection.IsSuccess)
             {
                 await dialogService.ShowMessage("Error",
                                                 connection.Message);
@@ -66,9 +69,9 @@ namespace AppChambitasV1.ViewModels
             var mainViewModel = MainViewModel.GetInstance();
 
             var response = await apiService.GetList<TiposServicios>(
-                "http://appchambitasv1api2018.azurewebsites.net", 
+                "http://appchambitasv1api2018.azurewebsites.net",
                 "/api",
-                "/TiposServicios", 
+                "/TiposServicios",
                 mainViewModel.Token.TokenType,
             mainViewModel.Token.AccessToken);
 
@@ -79,6 +82,17 @@ namespace AppChambitasV1.ViewModels
                 return;
             }
             var tiposServicios = (List<TiposServicios>)response.Result;
+            TiposServicios = new ObservableCollection<TiposServicios>(tiposServicios.OrderBy(ts => ts.TipoServ_Nombre));
+        }
+        #endregion
+
+        #region Commands
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                return new RelayCommand(LoadCategories);
+            }
         }
         #endregion
     }
