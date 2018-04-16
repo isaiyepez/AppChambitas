@@ -130,6 +130,50 @@
         #endregion
 
         #region Commands
+        //public ICommand RecoverPasswordCommand
+        //{
+        //    get
+        //    {
+        //        return new RelayCommand(RecoverPassword);
+        //    }
+        //}
+
+        //async void RecoverPassword()
+        //{
+        //    MainViewModel.GetInstance().PasswordRecovery =
+        //        new PasswordRecoveryViewModel();
+        //    await navigationService.NavigateOnLogin("PasswordRecoveryView");
+        //}
+
+
+        //public ICommand LoginWithFacebookCommand
+        //{
+        //    get
+        //    {
+        //        return new RelayCommand(LoginWithFacebook);
+        //    }
+        //}
+
+        //async void LoginWithFacebook()
+        //{
+        //    await navigationService.NavigateOnLogin("LoginFacebookView");
+        //}
+
+        public ICommand RegisterNewUserCommand
+        {
+            get
+            {
+                return new RelayCommand(RegisterNewUser);
+            }
+        }
+
+        async void RegisterNewUser()
+        {
+            MainViewModel.GetInstance().NewCustomer = new NewCustomerViewModel();
+            await navigationService.NavigateOnLogin("NewCustomerView");
+        }
+
+
         public ICommand LoginCommand
         {
             get
@@ -171,7 +215,10 @@
                 return;
             }
 
-            var response = await apiService.GetToken("http://appchambitasv1api2018.azurewebsites.net", Email, Password);
+            var response = await apiService.GetToken(
+                "http://appchambitasv1api2018.azurewebsites.net", 
+                Email, 
+                Password);
 
             //Si se perdió la conexión a la mitad de la operación...
             if (response == null)

@@ -36,6 +36,12 @@ namespace AppChambitasV1.ViewModels
             set;
         }
 
+        public NewCustomerViewModel NewCustomer
+        {
+            get;
+            set;
+        }
+
         #endregion
 
         #region Constructors
