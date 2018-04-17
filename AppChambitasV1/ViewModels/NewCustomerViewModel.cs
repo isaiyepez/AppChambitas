@@ -270,6 +270,4 @@ namespace AppChambitasV1.ViewModels
         #endregion
 
     }
-
-    }
 }
