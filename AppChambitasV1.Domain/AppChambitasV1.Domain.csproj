@@ -58,6 +58,7 @@
     <Compile Include="Tecnico.cs" />
     <Compile Include="TiposServicios.cs" />
     <Compile Include="TiposServiciosDetalle.cs" />
+    <Compile Include="Ubication.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>

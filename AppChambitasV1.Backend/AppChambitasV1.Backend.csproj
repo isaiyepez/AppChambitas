@@ -198,6 +198,7 @@
     <Compile Include="Controllers\TecnicoesController.cs" />
     <Compile Include="Controllers\TiposServiciosController.cs" />
     <Compile Include="Controllers\TiposServiciosDetallesController.cs" />
+    <Compile Include="Controllers\UbicationsController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Helper\FilesHelper.cs" />
     <Compile Include="Global.asax.cs">
@@ -303,6 +304,11 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Ubications\Create.cshtml" />
+    <Content Include="Views\Ubications\Delete.cshtml" />
+    <Content Include="Views\Ubications\Details.cshtml" />
+    <Content Include="Views\Ubications\Edit.cshtml" />
+    <Content Include="Views\Ubications\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

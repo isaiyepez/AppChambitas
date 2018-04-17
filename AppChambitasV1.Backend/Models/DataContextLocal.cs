@@ -9,5 +9,7 @@ namespace AppChambitasV1.Backend.Models
     public class DataContextLocal : DataContext
     {
         public System.Data.Entity.DbSet<AppChambitasV1.Domain.Customer> Customers { get; set; }
+
+        public System.Data.Entity.DbSet<AppChambitasV1.Domain.Ubication> Ubications { get; set; }
     }
 }

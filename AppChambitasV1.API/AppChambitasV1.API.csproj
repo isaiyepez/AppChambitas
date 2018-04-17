@@ -235,6 +235,7 @@
     <Compile Include="Controllers\TecnicoesController.cs" />
     <Compile Include="Controllers\TiposServiciosController.cs" />
     <Compile Include="Controllers\TiposServiciosDetallesController.cs" />
+    <Compile Include="Controllers\UbicationsController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
