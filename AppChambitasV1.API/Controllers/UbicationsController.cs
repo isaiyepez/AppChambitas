@@ -13,6 +13,7 @@ using AppChambitasV1.Domain;
 
 namespace AppChambitasV1.API.Controllers
 {
+    [Authorize]
     public class UbicationsController : ApiController
     {
         private DataContext db = new DataContext();
