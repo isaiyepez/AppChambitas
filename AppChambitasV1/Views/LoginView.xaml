@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="AppChambitasV1.Views.LoginView"
+    BackgroundColor = "{StaticResource BackgroundColor}"
     BindingContext="{Binding Main, Source= {StaticResource Locator}}"
     Title = "Login">
     <ContentPage.Content>
@@ -14,6 +15,7 @@
                 FontAttributes="Bold"
                 FontSize = "Large"
                 HorizontalOptions = "Center"
+                TextColor = "{StaticResource FontColor}"
                 Text="Chambitas">                
             </Label>
             <Grid
@@ -25,6 +27,7 @@
                 <Label
                     Grid.Column = "0"
                     Grid.Row = "0"
+                    TextColor = "{StaticResource FontColor}"
                     Text = "Email:">
                 </Label>
                 <Entry
@@ -38,6 +41,7 @@
                 <Label
                     Grid.Column = "0"
                     Grid.Row = "1"
+                    TextColor = "{StaticResource FontColor}"
                     Text = "Password:">
                 </Label>
                 <Entry
@@ -62,7 +66,7 @@
             <Label
                 HorizontalOptions = "Center"
                 Text ="Forgot your password?"
-                TextColor="Teal">
+                TextColor="{StaticResource FontColor}">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer 
                         Command = "{Binding RecoverPasswordCommand}"/>
@@ -75,7 +79,7 @@
             <StackLayout
                 Margin = "50,0">
              <Button
-                BackgroundColor="Teal"
+                BackgroundColor="{StaticResource MainColor}"
                 BorderRadius = "23"
                 Command = "{Binding LoginCommand}"
                 FontAttributes = "Bold"
@@ -88,10 +92,10 @@
             <Label
                 HorizontalOptions = "Center"
                 Text ="New user?"
-                TextColor="Teal">
+                TextColor="{StaticResource FontColor}">
             </Label>
              <Button
-                BackgroundColor="Teal"
+                BackgroundColor="{StaticResource AccentColor1}"
                 BorderRadius = "23"
                 Command = "{Binding RegisterNewUserCommand}"
                 FontAttributes = "Bold"
@@ -102,7 +106,7 @@
                 
             </Button>
                 <Button
-                BackgroundColor="Blue"
+                BackgroundColor="#3b5998"
                 BorderRadius = "23"
                 Command = "{Binding LoginWithFacebookCommand}"
                 FontAttributes = "Bold"

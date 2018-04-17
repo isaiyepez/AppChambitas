@@ -30,33 +30,33 @@ namespace AppChambitasV1.Services
                     await App.Navigator.PushAsync(
                         new CategoriesView());
                     break;
-                case "ProductsView":
+                case "TiposServiciosDetalleView":
                     await App.Navigator.PushAsync(
-                        new ProductsView());
+                        new TiposServiciosDetalleView());
                     break;
-                case "NewCategoryView":
+                case "TecnicosView":
                     await App.Navigator.PushAsync(
-                        new NewCategoryView());
+                        new TecnicosView());
                     break;
-                case "EditCategoryView":
-                    await App.Navigator.PushAsync(
-                        new EditCategoryView());
-                    break;
-                case "NewProductView":
-                    await App.Navigator.PushAsync(
-                        new NewProductView());
-                    break;
-                case "EditProductView":
-                    await App.Navigator.PushAsync(
-                        new EditProductView());
-                    break;
+                //case "EditCategoryView":
+                //    await App.Navigator.PushAsync(
+                //        new EditCategoryView());
+                //    break;
+                //case "NewProductView":
+                //    await App.Navigator.PushAsync(
+                //        new NewProductView());
+                //    break;
+                //case "EditProductView":
+                    //await App.Navigator.PushAsync(
+                    //    new EditProductView());
+                    //break;
                 case "UbicationsView":
                     await App.Navigator.PushAsync(
                         new UbicationsView());
                     break;
-                case "SyncView":
-                    await App.Navigator.PushAsync(
-                        new SyncView());
+                //case "SyncView":
+                    //await App.Navigator.PushAsync(
+                        //new SyncView());
                     break;
                 case "MyProfileView":
                     await App.Navigator.PushAsync(
@@ -92,7 +92,6 @@ namespace AppChambitasV1.Services
         public async Task BackOnLogin()
         {
             await Application.Current.MainPage.Navigation.PopAsync();
-        }
-    }
+        }    
     }
 }
