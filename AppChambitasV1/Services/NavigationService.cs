@@ -57,7 +57,7 @@ namespace AppChambitasV1.Services
                 //case "SyncView":
                     //await App.Navigator.PushAsync(
                         //new SyncView());
-                    break;
+                    //break;
                 case "MyProfileView":
                     await App.Navigator.PushAsync(
                         new MyProfileView());

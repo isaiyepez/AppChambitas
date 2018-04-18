@@ -52,5 +52,5 @@ namespace AppChambitasV1.Views
         }
         #endregion
     }
-    }
+
 }

@@ -131,7 +131,7 @@
                 };
             }
         }
-
+*/
         public async Task<TokenResponse> LoginFacebook(
             string urlBase,
             string servicePrefix,
@@ -163,7 +163,7 @@
                 return null;
             }
         }
-*/
+
 
         public async Task<TokenResponse> GetToken(
             string urlBase,

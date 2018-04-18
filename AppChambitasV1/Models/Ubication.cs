@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 namespace AppChambitasV1.Models
 {
     public class Ubication

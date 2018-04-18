@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace AppChambitasV1.Models
 {
-    public class Menu
+    public class MenuCh
     {
         #region Services
         NavigationService navigationService;
@@ -34,7 +34,7 @@ namespace AppChambitasV1.Models
         #endregion
 
         #region Constructors
-        public Menu()
+        public MenuCh()
         {
             
             navigationService = new NavigationService();

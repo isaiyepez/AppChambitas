@@ -112,7 +112,7 @@
                 FontAttributes = "Bold"
                 HeightRequest = "46"
                 IsEnabled = "{Binding IsEnabled, Mode=TwoWay}"
-                Text="Login With Facebook"
+                Text="Login with Facebook"
                 TextColor="White">
                 
             </Button>   

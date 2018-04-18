@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Command;
+//using AppChambitasV1.Interfaces;
 using AppChambitasV1.Models;
+using AppChambitasV1.Services;
 using Xamarin.Forms;
-
 namespace AppChambitasV1.ViewModels
 {
     public class MainViewModel
     {
         #region Properties
-        public ObservableCollection<Menu> MyMenu
+        public ObservableCollection<MenuCh> MyMenu
         {
             get;
             set;
@@ -96,24 +99,24 @@ namespace AppChambitasV1.ViewModels
         #endregion
 
         #region Methods
-        public void RegisterDevice()
-        {
-            var register = DependencyService.Get<IRegisterDevice>();
-            register.RegisterDevice();
-        }
+        //public void RegisterDevice()
+        //{
+        //    var register = DependencyService.Get<IRegisterDevice>();
+        //    register.RegisterDevice();
+        //}
 
         private void LoadMenu()
         {
-            MyMenu = new ObservableCollection<Menu>();
+            MyMenu = new ObservableCollection<MenuCh>();
 
-            MyMenu.Add(new Menu
+            MyMenu.Add(new MenuCh
             {
                 Icon = "ic_settings",
                 PageName = "MyProfileView",
                 Title = "My Profile",
             });
 
-            MyMenu.Add(new Menu
+            MyMenu.Add(new MenuCh
             {
                 Icon = "ic_map",
                 PageName = "UbicationsView",
@@ -127,7 +130,7 @@ namespace AppChambitasV1.ViewModels
             //    Title = "Sync Offline Operations",
             //});
 
-            MyMenu.Add(new Menu
+            MyMenu.Add(new MenuCh
             {
                 Icon = "ic_exit_to_app",
                 PageName = "LoginView",

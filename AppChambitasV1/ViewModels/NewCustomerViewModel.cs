@@ -4,6 +4,7 @@ using GalaSoft.MvvmLight.Command;
 using AppChambitasV1.Helpers;
 using AppChambitasV1.Models;
 using AppChambitasV1.Services;
+using Xamarin.Forms;
 
 namespace AppChambitasV1.ViewModels
 {
@@ -214,8 +215,10 @@ namespace AppChambitasV1.ViewModels
                 Phone = Phone,
             };
 
+            var urlAPI = Application.Current.Resources["URLAPI"].ToString();
+
             var response = await apiService.Post(
-                "http://appchambitasv1api2018.azurewebsites.net",
+                urlAPI,
                 "/api",
                 "/Customers",
                 customer);
@@ -230,8 +233,10 @@ namespace AppChambitasV1.ViewModels
                 return;
             }
 
+
+
             var response2 = await apiService.GetToken(
-                "http://appchambitasv1api2018.azurewebsites.net",
+                urlAPI,
                 Email,
                 Password);
 
@@ -259,7 +264,7 @@ namespace AppChambitasV1.ViewModels
 
             var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.Token = response2;
-            mainViewModel.RegisterDevice();
+            //mainViewModel.RegisterDevice();
             mainViewModel.Categories = new CategoriesViewModel();
             await navigationService.BackOnLogin();
             navigationService.SetMainPage("MasterView");

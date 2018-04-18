@@ -4,7 +4,8 @@
     using System.Windows.Input;
     using AppChambitasV1.Services;
     using GalaSoft.MvvmLight.Command;
-     
+    using Xamarin.Forms;
+
     public class LoginViewModel : INotifyPropertyChanged
     {
         #region Events
@@ -146,18 +147,18 @@
         //}
 
 
-        //public ICommand LoginWithFacebookCommand
-        //{
-        //    get
-        //    {
-        //        return new RelayCommand(LoginWithFacebook);
-        //    }
-        //}
+        public ICommand LoginWithFacebookCommand
+        {
+            get
+            {
+                return new RelayCommand(LoginWithFacebook);
+            }
+        }
 
-        //async void LoginWithFacebook()
-        //{
-        //    await navigationService.NavigateOnLogin("LoginFacebookView");
-        //}
+        async void LoginWithFacebook()
+        {
+            await navigationService.NavigateOnLogin("LoginFacebookView");
+        }
 
         public ICommand RegisterNewUserCommand
         {
@@ -215,8 +216,10 @@
                 return;
             }
 
+            var urlAPI = Application.Current.Resources["URLAPI"].ToString();
+
             var response = await apiService.GetToken(
-                "http://appchambitasv1api2018.azurewebsites.net", 
+                urlAPI,
                 Email, 
                 Password);
 
@@ -241,7 +244,7 @@
                 return;
             }
 
-            await dialogService.ShowMessage("Sucessfull","Welcome, login successful");
+            await dialogService.ShowMessage("Sucessful","Welcome, login successful");
 
             //Se implementa patrón singleton
             var mainViewModel = MainViewModel.GetInstance();

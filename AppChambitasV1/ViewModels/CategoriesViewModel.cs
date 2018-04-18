@@ -7,6 +7,7 @@ using System.Windows.Input;
 using AppChambitasV1.Models;
 using AppChambitasV1.Services;
 using GalaSoft.MvvmLight.Command;
+using Xamarin.Forms;
 
 namespace AppChambitasV1.ViewModels
 {
@@ -68,8 +69,10 @@ namespace AppChambitasV1.ViewModels
 
             var mainViewModel = MainViewModel.GetInstance();
 
+            var urlAPI = Application.Current.Resources["URLAPI"].ToString();
+
             var response = await apiService.GetList<TiposServicios>(
-                "http://appchambitasv1api2018.azurewebsites.net",
+                urlAPI,
                 "/api",
                 "/TiposServicios",
                 mainViewModel.Token.TokenType,

@@ -6,7 +6,7 @@ using Android.OS;
 namespace AppChambitasV1.Droid
 {
     [Activity(Label = "AppChambitasV1.Droid", 
-              Icon = "@drawable/icon", Theme = "@style/MyTheme", 
+              Icon = "@drawable/ic_launcher", Theme = "@style/MyTheme", 
               MainLauncher = true, ConfigurationChanges = 
               ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
