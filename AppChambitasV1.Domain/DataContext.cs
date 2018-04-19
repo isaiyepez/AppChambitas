@@ -28,8 +28,8 @@ namespace AppChambitasV1.Domain
 
         public DbSet<TiposServiciosDetalle> TiposServiciosDetalles { get; set; }
 
-        public System.Data.Entity.DbSet<AppChambitasV1.Domain.Customer> Customers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
-        public System.Data.Entity.DbSet<AppChambitasV1.Domain.Ubication> Ubications { get; set; }
+        public DbSet<Ubication> Ubications { get; set; }
     }
 }

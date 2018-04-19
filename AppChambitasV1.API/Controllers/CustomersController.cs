@@ -10,6 +10,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using AppChambitasV1.API.Helpers;
 using AppChambitasV1.API.Models;
 using AppChambitasV1.Domain;
 using Microsoft.AspNet.Identity;
