@@ -23,10 +23,32 @@ namespace AppChambitasV1.ViewModels
         #endregion
 
         #region Attributes
+        List<TiposServicios> tiposServicios;
         ObservableCollection<TiposServicios> _tiposServicios;
+        bool _isRefreshing;
+        string _filter;
         #endregion
 
         #region Properties
+        public string Filter
+        {
+            get
+            {
+                return _filter;
+            }
+            set
+            {
+                if (_filter != value)
+                {
+                    _filter = value;
+                    Search();
+                    PropertyChanged?.Invoke(
+                        this,
+                        new PropertyChangedEventArgs(nameof(Filter)));
+                }
+            }
+        }
+
         public ObservableCollection<TiposServicios> TiposServicios
         {
             get
@@ -41,6 +63,24 @@ namespace AppChambitasV1.ViewModels
                     PropertyChanged?.Invoke(
                     this,
                         new PropertyChangedEventArgs(nameof(TiposServicios)));
+                }
+            }
+        }
+
+        public bool IsRefreshing
+        {
+            get
+            {
+                return _isRefreshing;
+            }
+            set
+            {
+                if (_isRefreshing != value)
+                {
+                    _isRefreshing = value;
+                    PropertyChanged?.Invoke(
+                        this,
+                        new PropertyChangedEventArgs(nameof(IsRefreshing)));
                 }
             }
         }
@@ -84,12 +124,40 @@ namespace AppChambitasV1.ViewModels
                                                 response.Message);
                 return;
             }
-            var tiposServicios = (List<TiposServicios>)response.Result;
-            TiposServicios = new ObservableCollection<TiposServicios>(tiposServicios.OrderBy(ts => ts.TipoServ_Nombre));
+            tiposServicios = (List<TiposServicios>)response.Result;
+            Search();
+            IsRefreshing = false;
         }
         #endregion
 
         #region Commands
+
+        public ICommand SearchCommand
+        {
+            get
+            {
+                return new RelayCommand(Search);
+            }
+        }
+
+        void Search()
+        {
+            IsRefreshing = true;
+
+            if (string.IsNullOrEmpty(Filter))
+            {
+                TiposServicios = new ObservableCollection<TiposServicios>(
+                    tiposServicios.OrderBy(c => c.TipoServ_Nombre));
+            }
+            else
+            {
+                TiposServicios = new ObservableCollection<TiposServicios>(tiposServicios
+                    .Where(c => c.TipoServ_Nombre.ToLower().Contains(Filter.ToLower()))
+                    .OrderBy(c => c.TipoServ_Nombre));
+            }
+
+            IsRefreshing = false;
+        }
         public ICommand RefreshCommand
         {
             get

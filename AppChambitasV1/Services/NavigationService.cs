@@ -37,19 +37,7 @@ namespace AppChambitasV1.Services
                 case "TecnicosView":
                     await App.Navigator.PushAsync(
                         new TecnicosView());
-                    break;
-                //case "EditCategoryView":
-                //    await App.Navigator.PushAsync(
-                //        new EditCategoryView());
-                //    break;
-                //case "NewProductView":
-                //    await App.Navigator.PushAsync(
-                //        new NewProductView());
-                //    break;
-                //case "EditProductView":
-                    //await App.Navigator.PushAsync(
-                    //    new EditProductView());
-                    //break;
+                    break;    
                 case "UbicationsView":
                     await App.Navigator.PushAsync(
                         new UbicationsView());

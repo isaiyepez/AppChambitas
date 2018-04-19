@@ -9,6 +9,13 @@
         <StackLayout
             BindingContext="{Binding TiposServicios}"
             Padding = "5">
+
+            <SearchBar
+                Placeholder="Search..."
+                Text="{Binding Filter, Mode=TwoWay}"
+                SearchCommand="{Binding SearchCommand}">
+            </SearchBar>
+            
             <ListView
                 HasUnevenRows = "true"
                 IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"

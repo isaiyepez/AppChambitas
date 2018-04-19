@@ -131,20 +131,20 @@
         #endregion
 
         #region Commands
-        //public ICommand RecoverPasswordCommand
-        //{
-        //    get
-        //    {
-        //        return new RelayCommand(RecoverPassword);
-        //    }
-        //}
+        public ICommand RecoverPasswordCommand
+        {
+            get
+            {
+                return new RelayCommand(RecoverPassword);
+            }
+        }
 
-        //async void RecoverPassword()
-        //{
-        //    MainViewModel.GetInstance().PasswordRecovery =
-        //        new PasswordRecoveryViewModel();
-        //    await navigationService.NavigateOnLogin("PasswordRecoveryView");
-        //}
+        async void RecoverPassword()
+        {
+            MainViewModel.GetInstance().PasswordRecovery =
+                new PasswordRecoveryViewModel();
+            await navigationService.NavigateOnLogin("PasswordRecoveryView");
+        }
 
 
         public ICommand LoginWithFacebookCommand

@@ -1,5 +1,7 @@
-﻿using AppChambitasV1.Views;
+﻿
+using AppChambitasV1.Views;
 using Xamarin.Forms;
+
 
 [assembly: ExportRenderer(typeof(LoginFacebookView),
                           typeof(AppChambitasV1.iOS.Renderers.LoginFacebookRenderer))]

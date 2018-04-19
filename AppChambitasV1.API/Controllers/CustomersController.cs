@@ -64,65 +64,65 @@ namespace AppChambitasV1.API.Controllers
             return Ok(true);
         }
 
-        //[HttpPost]
-        //[Route("PasswordRecovery")]
-        //public async Task<IHttpActionResult> PasswordRecovery(JObject form)
-        //{
-        //    try
-        //    {
-        //        var email = string.Empty;
-        //        dynamic jsonObject = form;
+        [HttpPost]
+        [Route("PasswordRecovery")]
+        public async Task<IHttpActionResult> PasswordRecovery(JObject form)
+        {
+            try
+            {
+                var email = string.Empty;
+                dynamic jsonObject = form;
 
-        //        try
-        //        {
-        //            email = jsonObject.Email.Value;
-        //        }
-        //        catch
-        //        {
-        //            return BadRequest("Incorrect call.");
-        //        }
+                try
+                {
+                    email = jsonObject.Email.Value;
+                }
+                catch
+                {
+                    return BadRequest("Incorrect call.");
+                }
 
-        //        var customer = await db.Customers
-        //            .Where(u => u.Email.ToLower() == email.ToLower())
-        //            .FirstOrDefaultAsync();
-        //        if (customer == null)
-        //        {
-        //            return NotFound();
-        //        }
+                var customer = await db.Customers
+                    .Where(u => u.Email.ToLower() == email.ToLower())
+                    .FirstOrDefaultAsync();
+                if (customer == null)
+                {
+                    return NotFound();
+                }
 
-        //        var userContext = new ApplicationDbContext();
-        //        var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(userContext));
-        //        var userASP = userManager.FindByEmail(email);
-        //        if (userASP == null)
-        //        {
-        //            return NotFound();
-        //        }
+                var userContext = new ApplicationDbContext();
+                var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(userContext));
+                var userASP = userManager.FindByEmail(email);
+                if (userASP == null)
+                {
+                    return NotFound();
+                }
 
-        //        var random = new Random();
-        //        var newPassword = string.Format("{0}", random.Next(100000, 999999));
-        //        var response1 = userManager.RemovePassword(userASP.Id);
-        //        var response2 = await userManager.AddPasswordAsync(userASP.Id, newPassword);
-        //        if (response2.Succeeded)
-        //        {
-        //            var subject = "Products - Password Recovery";
-        //            var body = string.Format(@"
-        //                <h1>Products App - Password Recovery</h1>
-        //                <p>Your new password is: <strong>{0}</strong></p>
-        //                <p>Please, don't forget change it for one easy remember for you.",
-        //                newPassword);
+                var random = new Random();
+                var newPassword = string.Format("{0}", random.Next(100000, 999999));
+                var response1 = userManager.RemovePassword(userASP.Id);
+                var response2 = await userManager.AddPasswordAsync(userASP.Id, newPassword);
+                if (response2.Succeeded)
+                {
+                    var subject = "Products - Password Recovery";
+                    var body = string.Format(@"
+                        <h1>Products App - Password Recovery</h1>
+                        <p>Your new password is: <strong>{0}</strong></p>
+                        <p>Please, don't forget to change it for one easier to remember for you.",
+                        newPassword);
 
-        //            await MailHelper.SendMail(email, subject, body);
-        //            return Ok(true);
-        //        }
+                    await MailHelper.SendMail(email, subject, body);
+                    return Ok(true);
+                }
 
-        //        return BadRequest("The password can't be changed.");
+                return BadRequest("The password can't be changed.");
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(ex.Message);
-        //    }
-        //}
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
         [HttpPost]
         [Route("LoginFacebook")]

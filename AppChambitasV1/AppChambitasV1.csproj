@@ -146,6 +146,8 @@
     <Compile Include="Services\GeolocatorService.cs" />
     <Compile Include="Models\Ubication.cs" />
     <Compile Include="Models\FacebookResponse.cs" />
+    <Compile Include="Models\ChangePasswordRequest.cs" />
+    <Compile Include="Models\UserRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLitePCLRaw.batteries_green, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">

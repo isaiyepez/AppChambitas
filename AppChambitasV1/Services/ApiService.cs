@@ -41,7 +41,7 @@
             };
         }
 
-    /*    public async Task<Response> PasswordRecovery(
+        public async Task<Response> PasswordRecovery(
             string urlBase,
             string servicePrefix,
             string controller,
@@ -131,7 +131,7 @@
                 };
             }
         }
-*/
+
         public async Task<TokenResponse> LoginFacebook(
             string urlBase,
             string servicePrefix,
