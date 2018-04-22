@@ -127,6 +127,9 @@
             IsEnabled = true;
             IsToggled = true;
 
+			Email = "isaiyepez@gmail.com";
+			Password = "Abraxa$11";
+
         }
         #endregion
 
