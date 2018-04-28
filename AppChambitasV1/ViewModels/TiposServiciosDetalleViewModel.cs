@@ -13,6 +13,11 @@ namespace AppChambitasV1.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         #endregion
 
+        //#region Services
+        //ApiService apiService;
+        //DialogService dialogService;
+        //#endregion
+
         #region Attributes
         List<TiposServiciosDetalle> tiposServiciosDetalles;
         ObservableCollection<TiposServiciosDetalle> _tiposServiciosDetalle;

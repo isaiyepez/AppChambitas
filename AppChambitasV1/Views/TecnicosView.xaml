@@ -8,18 +8,7 @@
                 ItemsSource = "{Binding Tecnicos}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <!--<ViewCell.ContextActions>
-                                <MenuItem 
-                                    Command="{Binding EditCommand}" 
-                                    Text="Edit">
-                                </MenuItem>
-                                <MenuItem 
-                                    Command="{Binding DeleteCommand}" 
-                                    IsDestructive="true"     
-                                    Text="Delete">
-                                </MenuItem>
-                            </ViewCell.ContextActions>  -->
+                        <ViewCell>                           
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>

@@ -46,7 +46,11 @@ namespace AppChambitasV1.ViewModels
             get;
             set;
         }
-
+        public TiposServicios TiposServicios
+        {
+            get;
+            set;
+        }
         public NewCustomerViewModel NewCustomer
         {
             get;

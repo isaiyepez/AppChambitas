@@ -10,21 +10,10 @@
             BindingContext="{Binding TiposServiciosDetalle}"
             Padding = "5">
             <ListView
-                ItemsSource = "{Binding TiposServiciosDetalle}">
+                ItemsSource = "{Binding TiposServiciosDetalles}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                           <!-- <ViewCell.ContextActions>
-                                <MenuItem 
-                                    Command="{Binding EditCommand}" 
-                                    Text="Edit">
-                                </MenuItem>
-                                <MenuItem 
-                                    Command="{Binding DeleteCommand}" 
-                                    IsDestructive="true"     
-                                    Text="Delete">
-                                </MenuItem>
-                            </ViewCell.ContextActions>  -->
+                        <ViewCell>                           
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -41,7 +30,7 @@
                                     HorizontalOptions="End" 
                                     Source="ic_chevron_right">
                                     <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding SelectTiposServiciosCommand}"/>
+                                        <TapGestureRecognizer Command="{Binding SelectTecnicoCommand}"/>
                                     </Image.GestureRecognizers>
                                 </Image>
                             </Grid>
