@@ -7,7 +7,7 @@
     Title = "Categorías">
     <ContentPage.Content>
         <StackLayout
-            BindingContext="{Binding TiposServicios}"
+            BindingContext="{Binding Categories}"
             Padding = "5">
 
             <SearchBar
